@@ -14,7 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # import model
-from models import Usernames
+from models import *
 
 def login_required(f):
     @wraps(f)
@@ -29,13 +29,9 @@ def login_required(f):
 @app.route("/")
 @login_required
 def home_page():
-    users = []
-    try:
-        # Create a temporary database connection
-        users = db.session.query(Usernames).all()
-    except sqlite3.OperationalError:
-        flash("No users are registered at the moment.")
-    return render_template('home.html')
+    # Create a temporary database connection
+    users = db.session.query(Usernames).all()
+    return render_template('home.html', users=users)
 
 @app.route("/greet/")
 def greet():
