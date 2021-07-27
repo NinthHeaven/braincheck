@@ -29,8 +29,12 @@ def login_required(f):
 @app.route("/")
 @login_required
 def home_page():
-    # Create a temporary database connection
-    users = db.session.query(Usernames).all()
+    users = []
+    try:
+        # Create a temporary database connection
+        users = db.session.query(Usernames).all()
+    except sqlite3.OperationalError:
+        flash("No users are registered at the moment.")
     return render_template('home.html', users=users)
 
 @app.route("/greet/")
