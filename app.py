@@ -1,14 +1,13 @@
 from flask import Flask, render_template, redirect, url_for, request, session, flash
 from functools import wraps
 from flask_sqlalchemy import SQLAlchemy
+import os
 #import sqlite3
 
 app = Flask(__name__)
 
-# For login sessions and privacy, but make it more random later
-app.secret_key = "this is a key"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# App configurations
+app.config.from_object(os.environ['APP_SETTINGS'])
 
 # sqlalchemy object
 db = SQLAlchemy(app)
