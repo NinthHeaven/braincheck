@@ -35,7 +35,7 @@ def home_page():
         users = db.session.query(Usernames).all()
     except sqlite3.OperationalError:
         flash("No users are registered at the moment.")
-    return render_template('home.html', users=users)
+    return render_template('home.html')
 
 @app.route("/greet/")
 def greet():
