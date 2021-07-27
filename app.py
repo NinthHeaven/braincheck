@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 # App configurations
 app.config.from_object(os.environ['APP_SETTINGS'])
-print(os.environ['APP_SETTINGS'])
 
 # sqlalchemy object
 db = SQLAlchemy(app)
