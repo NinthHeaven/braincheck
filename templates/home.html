@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--- REMEMBER TO ADD TEMPLATE INHERITANCE HERE BY CREATING A BASE HTML FILE LATER ON-->
+<html>
+  <head>
+    <title>Flask Intro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Lab Website</h1>
+      <br>
+      <p>Click <a href="/logout">here</a> to logout.</p>
+      {% for message in get_flashed_messages() %}
+        {{ message }}
+      {% endfor %}
+      <br>
+      <h3> Current Users: </h3>
+      <!--- Basic Jinja format for interating over elements in a SQL database.
+            Use this for when you need to display the number of edits performed 
+            and also if a user got assigned an edit-->
+      {% for user in users %}
+        <strong>Username: </strong> {{ user.username }} <br>
+        <strong>Password: </strong> {{ user.password }} <br>
+      {% endfor %}
+      <p> <strong> Current Version: </strong> Alpha 0.0.1</p>
+    </div>
+  </body>
+</html>
