@@ -1,0 +1,117 @@
+2021-08-03 17:16:41,807 ERROR: Exception on /user/admin [POST] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 79, in user
+    mod = Usernames(username=form.username.data)
+AttributeError: 'Notifications' object has no attribute 'username'
+2021-08-03 17:42:51,147 ERROR: Exception on /user/admin [POST] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1771, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: users.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 82, in user
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3298, in flush
+    self._flush(objects)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3438, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3398, in _flush
+    flush_context.execute()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1219, in _emit_insert_statements
+    result = connection._execute_20(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1583, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1452, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1771, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: users.username
+[SQL: INSERT INTO users (username, pass_hash, about_me, last_seen) VALUES (?, ?, ?, ?)]
+[parameters: ('admin', None, None, '2021-08-03 21:42:51.147016')]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+2021-08-03 17:43:51,070 ERROR: Exception on /user/admin [POST] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 79, in user
+    message = Broadcasts(broadcast=form.notif.data, mod=current_user.username)
+  File "<string>", line 4, in __init__
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\state.py", line 480, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\state.py", line 477, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\decl_base.py", line 1145, in _declarative_constructor
+    setattr(self, k, kwargs[k])
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 459, in __set__
+    self.impl.set(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1253, in set
+    value = self.fire_replace_event(state, dict_, value, old, initiator)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1279, in fire_replace_event
+    value = fn(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 1714, in emit_backref_from_scalar_set_event
+    instance_state(child),
+AttributeError: 'str' object has no attribute '_sa_instance_state'

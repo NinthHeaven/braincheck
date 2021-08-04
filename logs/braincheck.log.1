@@ -1,0 +1,131 @@
+2021-08-03 20:46:07,683 ERROR: Exception on /rater [POST] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 120, in rater
+    return render_template('rater.html')
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\penie\hcpd-system\app\templates\rater.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\penie\hcpd-system\app\templates\base.html", line 1, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
+    {% block body -%}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
+    {% block content -%}
+  File "C:\Users\penie\hcpd-system\app\templates\base.html", line 51, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "C:\Users\penie\hcpd-system\app\templates\rater.html", line 8, in block 'app_content'
+    {{ wtf.quick_form(form) }}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\runtime.py", line 828, in _invoke
+    rv = self._func(*arguments)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\wtf.html", line 200, in template
+    {{ form.hidden_tag() }}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 474, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2021-08-04 03:47:04,207 ERROR: Exception on /uploader [GET] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 135, in uploader
+    return render_template('uploader.html')
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\penie\hcpd-system\app\templates\uploader.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "C:\Users\penie\hcpd-system\app\templates\base.html", line 1, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
+    {% block body -%}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
+    {% block content -%}
+  File "C:\Users\penie\hcpd-system\app\templates\base.html", line 52, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "C:\Users\penie\hcpd-system\app\templates\uploader.html", line 8, in block 'app_content'
+    {{ wtf.quick_form(form) }}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 474, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'wtf' is undefined
+2021-08-04 03:47:27,506 ERROR: Exception on /uploader [GET] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 135, in uploader
+    return render_template('uploader.html')
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\penie\hcpd-system\app\templates\uploader.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\penie\hcpd-system\app\templates\base.html", line 1, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
+    {% block body -%}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
+    {% block content -%}
+  File "C:\Users\penie\hcpd-system\app\templates\base.html", line 52, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "C:\Users\penie\hcpd-system\app\templates\uploader.html", line 9, in block 'app_content'
+    {{ wtf.quick_form(form) }}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\runtime.py", line 828, in _invoke
+    rv = self._func(*arguments)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\wtf.html", line 200, in template
+    {{ form.hidden_tag() }}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 474, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined

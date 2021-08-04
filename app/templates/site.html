@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+  <h1>Hello, user!</h2>
+  <br>
+  <p>Click <a href="/">here</a> to go home.</p>
+  <br>
+  {% for message in get_flashed_messages() %}
+    {{ message }}
+  {% endfor %}
+{% endblock %}

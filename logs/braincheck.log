@@ -1,0 +1,56 @@
+2021-08-04 04:37:21,598 ERROR: Exception on /uploader [GET] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 129, in uploader
+    files = os.listdir('static/uploads')
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'static/uploads'
+2021-08-04 04:38:32,948 ERROR: Exception on /uploader [GET] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 135, in uploader
+    return render_template('uploader.html', form=form, files=files)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\penie\hcpd-system\app\templates\uploader.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\penie\hcpd-system\app\templates\base.html", line 1, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
+    {% block body -%}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
+    {% block content -%}
+  File "C:\Users\penie\hcpd-system\app\templates\base.html", line 52, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "C:\Users\penie\hcpd-system\app\templates\uploader.html", line 14, in block 'app_content'
+    {{ url_for('static', filename='uploads/' + str(file)) }}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\utils.py", line 84, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: 'str' is undefined

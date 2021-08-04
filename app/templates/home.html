@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+  <h1>Hello, {{ current_user.username }}</h1>
+  {% if form %}
+    {{ wtf.quick_form(form) }}
+  <br>
+  {% endif %}
+  <br>
+  <p>Click <a href="/logout">here</a> to logout.</p>
+  {% for message in get_flashed_messages() %}
+    {{ message }}
+  {% endfor %}
+  <br>
+  <h3> Current Users: </h3>
+  <!--- Basic Jinja format for interating over elements in a SQL database.
+        Use this for when you need to display the number of edits performed 
+        and also if a user got assigned an edit-->
+  {% for user in users %}
+    {% if user.username == 'admin' %}
+      <strong>Username:</strong> <span style='color:rgb(235, 5, 5);'>{{ user.username }}</span> <br>
+    {% else %}
+      <strong>Username:</strong> {{ user.username }} <br>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

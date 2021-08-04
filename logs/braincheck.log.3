@@ -1,0 +1,125 @@
+2021-08-03 17:14:01,246 ERROR: Exception on /user/test_user2 [GET] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1771, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: broadcasts
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 71, in user
+    announcements = db.session.query(Broadcasts).all()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2712, in all
+    return self._iter().all()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result = self.session.execute(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1689, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1583, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1452, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1814, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1995, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1771, in _execute_context
+    self.dialect.do_execute(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: broadcasts
+[SQL: SELECT broadcasts.id AS broadcasts_id, broadcasts.broadcast AS broadcasts_broadcast, broadcasts.timestamp AS broadcasts_timestamp, broadcasts.user_id AS broadcasts_user_id 
+FROM broadcasts]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2021-08-03 17:14:39,628 ERROR: Exception on /user/test_user2 [GET] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 85, in user
+    return render_template('user.html', user=user, comments=comments, announcements=announcements)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\loaders.py", line 137, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 757, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\penie\hcpd-system\app\templates\user.html", line 20, in template
+    {% if current_user.username == 'admin'}
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2021-08-03 17:15:16,656 ERROR: Exception on /user/admin [GET] [in c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py:1454
+Traceback (most recent call last):
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\penie\hcpd-system\app\routes.py", line 85, in user
+    return render_template('user.html', user=user, comments=comments, announcements=announcements)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 147, in render_template
+    return _render(
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask\templating.py", line 128, in _render
+    rv = template.render(context)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\penie\hcpd-system\app\templates\user.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\penie\hcpd-system\app\templates\base.html", line 1, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block 'html'
+    {% block body -%}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block 'body'
+    {% block content -%}
+  File "C:\Users\penie\hcpd-system\app\templates\base.html", line 51, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "C:\Users\penie\hcpd-system\app\templates\user.html", line 24, in block 'app_content'
+    {{ wtf.quick_form(form) }}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\runtime.py", line 828, in _invoke
+    rv = self._func(*arguments)
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\wtf.html", line 200, in template
+    {{ form.hidden_tag() }}
+  File "c:\users\penie\hcpd-system\venv\lib\site-packages\jinja2\environment.py", line 474, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined

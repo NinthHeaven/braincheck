@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>File Upload</h1>
+    <p><strong>IMPORTANT NOTICE: THIS PAGE IS UNDER TESTING, NOTHING HERE IS FINAL.</strong></p>
+    <div class='row'>
+        <div class="col-md-4">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+    <p>Uploaded Images:</p>
+    <link rel="stylesheet" href="{{ url_for('static', filename='uploads/{{file}}') }}">
+    {% for file in files %}
+        <img src="{{ url_for('static', filename='uploads/{{file}}') }}" width="200" height="200">
+    {% endfor %}
+
+{% endblock %}
