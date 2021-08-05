@@ -24,11 +24,6 @@ def home_page():
 @app.route("/greet/")
 def greet():
     return render_template('site.html')
-
-@app.route("/static/<path:path>")
-def static_dir(path):
-    return send_from_directory("static", path)
-
 # Creating login page
 # Once this works, make sure that users see login page before anything else (add logic later)
 @app.route("/login", methods=['GET', 'POST'])
