@@ -30,4 +30,18 @@ Finally, to run the app just input
 ```
   
   
-  
+# braincheck docker instructions
+
+To build, run:
+
+```
+  docker build --tag braincheck .
+```
+
+To run the docker container:
+
+```
+  docker run --rm -p 5000:5000 braincheck
+```
+
+Then navigate to 127.0.0.1:5000 in a browser. C'est viola.
